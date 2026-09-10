@@ -4,7 +4,7 @@ import Aprender from '../views/Aprender.vue'
 import Reportar from '../views/Reportar.vue'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
