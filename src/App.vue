@@ -55,7 +55,7 @@ const mobileMenuOpen = ref(false)
           <nav class="hidden md:flex items-center gap-1.5 p-1.5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md">
             <RouterLink 
               to="/" 
-              class="relative px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 text-slate-400 hover:text-slate-100 flex items-center gap-2"
+              class="relative px-3.5 py-2 rounded-xl text-sm font-semibold transition-all duration-200 text-slate-400 hover:text-slate-100 flex items-center gap-2"
               active-class="!text-white !bg-gradient-to-r !from-blue-600/90 !to-indigo-600/90 !shadow-md !shadow-blue-500/20"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -65,8 +65,19 @@ const mobileMenuOpen = ref(false)
             </RouterLink>
 
             <RouterLink 
+              to="/alertas" 
+              class="relative px-3.5 py-2 rounded-xl text-sm font-semibold transition-all duration-200 text-slate-400 hover:text-slate-100 flex items-center gap-2"
+              active-class="!text-white !bg-gradient-to-r !from-blue-600/90 !to-indigo-600/90 !shadow-md !shadow-blue-500/20"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+              </svg>
+              <span>Alertas Ciudadanas</span>
+            </RouterLink>
+
+            <RouterLink 
               to="/aprender" 
-              class="relative px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 text-slate-400 hover:text-slate-100 flex items-center gap-2"
+              class="relative px-3.5 py-2 rounded-xl text-sm font-semibold transition-all duration-200 text-slate-400 hover:text-slate-100 flex items-center gap-2"
               active-class="!text-white !bg-gradient-to-r !from-blue-600/90 !to-indigo-600/90 !shadow-md !shadow-blue-500/20"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -77,7 +88,7 @@ const mobileMenuOpen = ref(false)
 
             <RouterLink 
               to="/reportar" 
-              class="relative px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 text-slate-400 hover:text-slate-100 flex items-center gap-2"
+              class="relative px-3.5 py-2 rounded-xl text-sm font-semibold transition-all duration-200 text-slate-400 hover:text-slate-100 flex items-center gap-2"
               active-class="!text-white !bg-gradient-to-r !from-blue-600/90 !to-indigo-600/90 !shadow-md !shadow-blue-500/20"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -87,10 +98,22 @@ const mobileMenuOpen = ref(false)
             </RouterLink>
           </nav>
 
-          <!-- Status Indicator Pill -->
-          <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 border border-emerald-500/30 text-xs font-medium text-slate-300">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>Triangulación Activa</span>
+          <!-- Status Indicator & Discrete Volunteer Access -->
+          <div class="hidden lg:flex items-center gap-3">
+            <RouterLink 
+              to="/panel-voluntarios" 
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/80 border border-slate-800/90 hover:border-cyan-500/40 text-xs font-medium text-slate-400 hover:text-cyan-300 transition-all duration-200 group"
+              active-class="!border-cyan-500/50 !text-cyan-300 !bg-cyan-500/10"
+              title="Panel interno para voluntarios y auditores acreditados"
+            >
+              <span class="text-xs group-hover:scale-110 transition-transform">⚖️</span>
+              <span>Acceso Verificadores</span>
+            </RouterLink>
+
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 border border-emerald-500/30 text-xs font-medium text-slate-300">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Gobernanza Cívica</span>
+            </div>
           </div>
 
           <!-- Mobile Hamburger -->
@@ -120,6 +143,14 @@ const mobileMenuOpen = ref(false)
           </RouterLink>
           <RouterLink 
             @click="mobileMenuOpen = false"
+            to="/alertas" 
+            class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:bg-slate-800"
+            active-class="bg-blue-600/20 text-cyan-400 border border-cyan-500/30"
+          >
+            Alertas Ciudadanas
+          </RouterLink>
+          <RouterLink 
+            @click="mobileMenuOpen = false"
             to="/aprender" 
             class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:bg-slate-800"
             active-class="bg-blue-600/20 text-cyan-400 border border-cyan-500/30"
@@ -134,6 +165,17 @@ const mobileMenuOpen = ref(false)
           >
             Reportar
           </RouterLink>
+          
+          <div class="pt-2 border-t border-slate-800/80">
+            <RouterLink 
+              @click="mobileMenuOpen = false"
+              to="/panel-voluntarios" 
+              class="block px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-cyan-300 hover:bg-slate-800/60"
+              active-class="bg-cyan-500/10 text-cyan-300 border border-cyan-500/30"
+            >
+              ⚖️ Acceso Verificadores (Panel Interno)
+            </RouterLink>
+          </div>
         </div>
 
       </div>
