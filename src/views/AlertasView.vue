@@ -67,18 +67,16 @@ const cargarAlertas = async () => {
       .order('created_at', { ascending: false })
 
     if (error) {
-      console.warn('Error consultando Supabase reportes:', error.message)
-      alertas.value = [...alertasMuestra]
-    } else if (data && data.length > 0) {
-      // Filtrar aquellos que tengan veredicto emitido
-      const conVeredicto = data.filter(d => d.veredicto || (d.estado && d.estado !== 'pendiente'))
-      alertas.value = conVeredicto.length > 0 ? conVeredicto : [...alertasMuestra]
+      console.error('Error al consultar alertas en Supabase:', error.message)
+      errorMessage.value = 'Error al consultar Supabase: ' + error.message
     } else {
-      alertas.value = [...alertasMuestra]
+      // Filtrar aquellos que tengan veredicto emitido o estado no pendiente
+      const conVeredicto = (data || []).filter(d => d.veredicto || (d.estado && d.estado !== 'pendiente'))
+      alertas.value = conVeredicto
     }
   } catch (err) {
     console.error('Error al obtener alertas verificadas:', err)
-    alertas.value = [...alertasMuestra]
+    errorMessage.value = 'Ocurrió un error al cargar el repositorio de alertas.'
   } finally {
     isLoading.value = false
   }
@@ -173,16 +171,30 @@ onMounted(() => {
           </button>
         </div>
 
-        <!-- Botón para reportar nueva sospecha -->
-        <RouterLink 
-          to="/reportar"
-          class="w-full md:w-auto px-5 py-3 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-xs tracking-wide shadow-lg shadow-cyan-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer flex-shrink-0"
-        >
-          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-          </svg>
-          <span>Reportar Nueva Alerta Ciudadana</span>
-        </RouterLink>
+        <!-- Botones de Acción -->
+        <div class="flex items-center gap-2.5 w-full md:w-auto">
+          <button
+            @click="cargarAlertas"
+            :disabled="isLoading"
+            class="px-3.5 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-50"
+            title="Sincronizar con Supabase"
+          >
+            <svg class="h-4 w-4" :class="{ 'animate-spin': isLoading }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+            <span class="hidden sm:inline">Actualizar</span>
+          </button>
+
+          <RouterLink 
+            to="/reportar"
+            class="w-full sm:w-auto px-5 py-3 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-xs tracking-wide shadow-lg shadow-cyan-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer flex-shrink-0"
+          >
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
+            <span>Reportar Alerta Ciudadana</span>
+          </RouterLink>
+        </div>
 
       </div>
 

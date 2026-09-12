@@ -59,18 +59,24 @@ const cargarReportes = async () => {
       .order('created_at', { ascending: false })
 
     if (error) {
-      console.warn('Consulta a Supabase:', error.message)
-      // Si la consulta falla o RLS restringe SELECT de pendientes a anon, cargamos cola local
-      reportesPendientes.value = [...casosMuestra]
-    } else if (data && data.length > 0) {
-      reportesPendientes.value = data
+      console.error('Error al consultar reportes en Supabase:', error.message)
+      errorMessage.value = 'Error de conexión: ' + error.message
     } else {
-      // Si no hay pendientes en BD, inicializamos con los casos cívicos de muestra para evaluación
-      reportesPendientes.value = [...casosMuestra]
+      reportesPendientes.value = data || []
+    }
+
+    // Consultar total de casos ya auditados en la base de datos
+    const { count } = await supabase
+      .from('reportes')
+      .select('*', { count: 'exact', head: true })
+      .neq('estado', 'pendiente')
+
+    if (count !== null && count !== undefined) {
+      dictamenesEmitidosHoy.value = count
     }
   } catch (err) {
     console.error('Error cargando reportes pendientes:', err)
-    reportesPendientes.value = [...casosMuestra]
+    errorMessage.value = 'Ocurrió un fallo al cargar la cola de moderación.'
   } finally {
     isLoading.value = false
   }

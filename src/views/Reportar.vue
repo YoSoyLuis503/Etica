@@ -58,6 +58,8 @@ const isUrlValid = computed(() => {
   }
 })
 
+const nuevoReporteId = ref(null)
+
 const submitReport = async () => {
   errorMessage.value = ''
   urlTouched.value = true
@@ -80,18 +82,21 @@ const submitReport = async () => {
   isSubmitting.value = true
 
   try {
-    const { error } = await supabase
+    const { data, error } = await supabase
       .from('reportes')
       .insert([
         { 
           url: form.value.url.trim(), 
           tipo_engano: form.value.tipo_engano, 
-          detalles: form.value.detalles.trim() || null
+          detalles: form.value.detalles.trim() || null,
+          estado: 'pendiente'
         }
       ])
+      .select()
 
     if (error) throw error
 
+    nuevoReporteId.value = data && data[0] ? data[0].id : null
     isSuccess.value = true
     
     // Clean form
@@ -101,11 +106,6 @@ const submitReport = async () => {
       detalles: ''
     }
     urlTouched.value = false
-
-    // Auto-dismiss success notification after 7s
-    setTimeout(() => {
-      isSuccess.value = false
-    }, 7000)
 
   } catch (error) {
     console.error('Error enviando reporte a Supabase:', error)
@@ -146,18 +146,29 @@ const submitReport = async () => {
         <transition name="slide-fade">
           <div 
             v-if="isSuccess" 
-            class="mb-8 p-5 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-emerald-900/40 to-slate-900/90 border border-emerald-500/40 shadow-xl shadow-emerald-950/50 flex items-start gap-3.5"
+            class="mb-8 p-5 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-emerald-900/40 to-slate-900/90 border border-emerald-500/40 shadow-xl shadow-emerald-950/50 flex flex-col sm:flex-row items-start justify-between gap-4"
           >
-            <div class="w-8 h-8 rounded-xl bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5 text-emerald-400">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
+            <div class="flex items-start gap-3.5">
+              <div class="w-8 h-8 rounded-xl bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5 text-emerald-400 font-bold">
+                ✓
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-emerald-300">
+                  ¡Reporte {{ nuevoReporteId ? '#' + nuevoReporteId : '' }} recibido con éxito!
+                </h3>
+                <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                  El reporte ha ingresado a la cola de auditoría de los voluntarios verificadores.
+                </p>
+              </div>
             </div>
-            <div>
-              <h3 class="text-sm font-bold text-emerald-300">¡Reporte recibido con éxito!</h3>
-              <p class="text-xs text-slate-300 mt-1 leading-relaxed">
-                El reporte ha sido enviado a la cola de moderación humana. Nuestro equipo cotejará la fuente de forma neutral.
-              </p>
+
+            <div class="flex items-center gap-2 self-end sm:self-center flex-shrink-0">
+              <RouterLink 
+                to="/panel-voluntarios" 
+                class="px-3 py-1.5 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 text-xs font-bold transition-colors"
+              >
+                Ver en Cola →
+              </RouterLink>
             </div>
           </div>
         </transition>

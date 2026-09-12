@@ -81,14 +81,16 @@ const publicarDictamen = async () => {
       fuente_respaldo: fuenteRespaldo.value.trim()
     }
 
-    // Try Supabase update
+    // Actualizar en Supabase
     const { error } = await supabase
       .from('reportes')
       .update(payload)
       .eq('id', props.reporte.id)
 
     if (error) {
-      console.warn('Aviso al actualizar en Supabase (puede requerir política RLS UPDATE):', error)
+      console.error('Error al actualizar en Supabase:', error)
+      errorMessage.value = 'No se pudo guardar en Supabase: ' + error.message
+      return
     }
 
     // Emit event with updated data for immediate UI reaction
