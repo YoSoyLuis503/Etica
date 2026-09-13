@@ -122,6 +122,97 @@ const etapasFlujo = [
       </div>
     </div>
 
+    <!-- 2. Justificación Ética: Justicia, Solidaridad e Impacto -->
+    <div class="mb-20">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider block mb-1">Fundamentación Cívica</span>
+        <h2 class="text-3xl font-extrabold text-white tracking-tight">Justificación Ética del Proyecto</h2>
+        <p class="text-sm text-slate-400 mt-2">Cómo aplicamos los principios éticos fundamentales y su impacto directo en la sociedad salvadoreña.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Justicia -->
+        <div class="glass-panel rounded-3xl p-7 border border-cyan-500/30 hover:border-cyan-500/60 transition-all duration-300 flex flex-col justify-between shadow-xl">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center text-2xl mb-5 shadow-inner">
+              ⚖️
+            </div>
+            <h3 class="text-lg font-bold text-white mb-1">¿Cómo aplica la Justicia?</h3>
+            <span class="text-xs font-semibold text-cyan-400 block mb-4">Verdad e imparcialidad como derecho</span>
+            
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+              <li class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold mt-0.5">•</span>
+                <span><strong>Derecho a la verdad:</strong> Engañar a la población es injusto porque anula su libertad para decidir informadamente.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold mt-0.5">•</span>
+                <span><strong>Imparcialidad:</strong> Se juzgan hechos comprobables con fuentes oficiales, nunca ideologías ni partidos.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold mt-0.5">•</span>
+                <span><strong>Acceso equitativo:</strong> Herramienta 100% gratuita y abierta para todos, sin barreras de pago.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Solidaridad -->
+        <div class="glass-panel rounded-3xl p-7 border border-indigo-500/30 hover:border-indigo-500/60 transition-all duration-300 flex flex-col justify-between shadow-xl">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 flex items-center justify-center text-2xl mb-5 shadow-inner">
+              🤝
+            </div>
+            <h3 class="text-lg font-bold text-white mb-1">¿Cómo aplica la Solidaridad?</h3>
+            <span class="text-xs font-semibold text-indigo-400 block mb-4">Bien común y protección mutua</span>
+            
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+              <li class="flex items-start gap-2">
+                <span class="text-indigo-400 font-bold mt-0.5">•</span>
+                <span><strong>Cuidado mutuo:</strong> Un ciudadano reporta una sospecha para proteger a su familia y a toda su comunidad.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-indigo-400 font-bold mt-0.5">•</span>
+                <span><strong>Voluntariado cívico:</strong> Profesionales donan su tiempo para auditar hechos por el bien común.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-indigo-400 font-bold mt-0.5">•</span>
+                <span><strong>Protección al vulnerable:</strong> Defiende a adultos mayores y personas con menor alfabetización digital de estafas o pánico.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Impacto en la población -->
+        <div class="glass-panel rounded-3xl p-7 border border-emerald-500/30 hover:border-emerald-500/60 transition-all duration-300 flex flex-col justify-between shadow-xl">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-2xl mb-5 shadow-inner">
+              🎯
+            </div>
+            <h3 class="text-lg font-bold text-white mb-1">¿Qué impacto tiene en la población?</h3>
+            <span class="text-xs font-semibold text-emerald-400 block mb-4">Autonomía y cohesión social</span>
+            
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold mt-0.5">•</span>
+                <span><strong>Pensamiento crítico:</strong> Enseña al ciudadano a dudar sanamente y verificar antes de compartir impulsivamente.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold mt-0.5">•</span>
+                <span><strong>Prevención del pánico:</strong> Evita compras desesperadas, zozobra social o riesgos de salud por rumores falsos.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold mt-0.5">•</span>
+                <span><strong>Cohesión social:</strong> Reduce la polarización al ofrecer un terreno común de hechos comprobables.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <!-- Cómo Funciona el Ciclo Ético (Infografía de pasos) -->
     <div class="mb-20">
       <div class="text-center max-w-2xl mx-auto mb-12">
