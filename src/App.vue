@@ -52,54 +52,66 @@ const mobileMenuOpen = ref(false)
           </RouterLink>
 
           <!-- Desktop Navigation -->
-          <nav class="hidden md:flex items-center gap-1.5 p-1.5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md">
+          <nav class="hidden xl:flex items-center gap-1 p-1.5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md text-xs">
             <RouterLink 
               to="/" 
-              class="relative px-3.5 py-2 rounded-xl text-sm font-semibold transition-all duration-200 text-slate-400 hover:text-slate-100 flex items-center gap-2"
+              class="relative px-3 py-1.5 rounded-xl font-semibold transition-all duration-200 text-slate-400 hover:text-slate-100 flex items-center gap-1.5"
               active-class="!text-white !bg-gradient-to-r !from-blue-600/90 !to-indigo-600/90 !shadow-md !shadow-blue-500/20"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
               <span>Verificador</span>
             </RouterLink>
 
             <RouterLink 
               to="/alertas" 
-              class="relative px-3.5 py-2 rounded-xl text-sm font-semibold transition-all duration-200 text-slate-400 hover:text-slate-100 flex items-center gap-2"
+              class="relative px-3 py-1.5 rounded-xl font-semibold transition-all duration-200 text-slate-400 hover:text-slate-100 flex items-center gap-1.5"
               active-class="!text-white !bg-gradient-to-r !from-blue-600/90 !to-indigo-600/90 !shadow-md !shadow-blue-500/20"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-              </svg>
-              <span>Alertas Ciudadanas</span>
+              <span>Alertas</span>
             </RouterLink>
 
             <RouterLink 
               to="/aprender" 
-              class="relative px-3.5 py-2 rounded-xl text-sm font-semibold transition-all duration-200 text-slate-400 hover:text-slate-100 flex items-center gap-2"
+              class="relative px-3 py-1.5 rounded-xl font-semibold transition-all duration-200 text-slate-400 hover:text-slate-100 flex items-center gap-1.5"
               active-class="!text-white !bg-gradient-to-r !from-blue-600/90 !to-indigo-600/90 !shadow-md !shadow-blue-500/20"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
               <span>Aprender</span>
             </RouterLink>
 
             <RouterLink 
               to="/reportar" 
-              class="relative px-3.5 py-2 rounded-xl text-sm font-semibold transition-all duration-200 text-slate-400 hover:text-slate-100 flex items-center gap-2"
+              class="relative px-3 py-1.5 rounded-xl font-semibold transition-all duration-200 text-slate-400 hover:text-slate-100 flex items-center gap-1.5"
               active-class="!text-white !bg-gradient-to-r !from-blue-600/90 !to-indigo-600/90 !shadow-md !shadow-blue-500/20"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-              </svg>
               <span>Reportar</span>
+            </RouterLink>
+
+            <RouterLink 
+              to="/servicios" 
+              class="relative px-3 py-1.5 rounded-xl font-semibold transition-all duration-200 text-slate-400 hover:text-slate-100 flex items-center gap-1.5"
+              active-class="!text-white !bg-gradient-to-r !from-blue-600/90 !to-indigo-600/90 !shadow-md !shadow-blue-500/20"
+            >
+              <span>Servicios</span>
+            </RouterLink>
+
+            <RouterLink 
+              to="/acerca" 
+              class="relative px-3 py-1.5 rounded-xl font-semibold transition-all duration-200 text-slate-400 hover:text-slate-100 flex items-center gap-1.5"
+              active-class="!text-white !bg-gradient-to-r !from-blue-600/90 !to-indigo-600/90 !shadow-md !shadow-blue-500/20"
+            >
+              <span>Acerca de</span>
+            </RouterLink>
+
+            <RouterLink 
+              to="/contacto" 
+              class="relative px-3 py-1.5 rounded-xl font-semibold transition-all duration-200 text-slate-400 hover:text-slate-100 flex items-center gap-1.5"
+              active-class="!text-white !bg-gradient-to-r !from-blue-600/90 !to-indigo-600/90 !shadow-md !shadow-blue-500/20"
+            >
+              <span>Contacto</span>
             </RouterLink>
           </nav>
 
           <!-- Status Indicator & Discrete Volunteer Access -->
-          <div class="hidden lg:flex items-center gap-3">
+          <div class="hidden lg:flex items-center gap-2.5">
             <RouterLink 
               to="/panel-voluntarios" 
               class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/80 border border-slate-800/90 hover:border-cyan-500/40 text-xs font-medium text-slate-400 hover:text-cyan-300 transition-all duration-200 group"
@@ -119,7 +131,7 @@ const mobileMenuOpen = ref(false)
           <!-- Mobile Hamburger -->
           <button 
             @click="mobileMenuOpen = !mobileMenuOpen" 
-            class="md:hidden p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white"
+            class="xl:hidden p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white cursor-pointer"
             aria-label="Toggle menu"
           >
             <svg v-if="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -132,45 +144,69 @@ const mobileMenuOpen = ref(false)
         </div>
 
         <!-- Mobile Menu Dropdown -->
-        <div v-if="mobileMenuOpen" class="md:hidden py-4 border-t border-slate-800/80 space-y-2">
+        <div v-if="mobileMenuOpen" class="xl:hidden py-4 border-t border-slate-800/80 space-y-1.5">
           <RouterLink 
             @click="mobileMenuOpen = false"
             to="/" 
-            class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:bg-slate-800"
+            class="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:bg-slate-800"
             active-class="bg-blue-600/20 text-cyan-400 border border-cyan-500/30"
           >
-            Verificador
+            🔍 Verificador
           </RouterLink>
           <RouterLink 
             @click="mobileMenuOpen = false"
             to="/alertas" 
-            class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:bg-slate-800"
+            class="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:bg-slate-800"
             active-class="bg-blue-600/20 text-cyan-400 border border-cyan-500/30"
           >
-            Alertas Ciudadanas
+            🛡️ Alertas Ciudadanas
           </RouterLink>
           <RouterLink 
             @click="mobileMenuOpen = false"
             to="/aprender" 
-            class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:bg-slate-800"
+            class="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:bg-slate-800"
             active-class="bg-blue-600/20 text-cyan-400 border border-cyan-500/30"
           >
-            Aprender
+            🎓 Aprender (Quiz Forense)
           </RouterLink>
           <RouterLink 
             @click="mobileMenuOpen = false"
             to="/reportar" 
-            class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:bg-slate-800"
+            class="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:bg-slate-800"
             active-class="bg-blue-600/20 text-cyan-400 border border-cyan-500/30"
           >
-            Reportar
+            📬 Reportar Sospecha
+          </RouterLink>
+          <RouterLink 
+            @click="mobileMenuOpen = false"
+            to="/servicios" 
+            class="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:bg-slate-800"
+            active-class="bg-blue-600/20 text-cyan-400 border border-cyan-500/30"
+          >
+            🌱 Servicios Cívicos
+          </RouterLink>
+          <RouterLink 
+            @click="mobileMenuOpen = false"
+            to="/acerca" 
+            class="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:bg-slate-800"
+            active-class="bg-blue-600/20 text-cyan-400 border border-cyan-500/30"
+          >
+            📖 Acerca del Proyecto
+          </RouterLink>
+          <RouterLink 
+            @click="mobileMenuOpen = false"
+            to="/contacto" 
+            class="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:bg-slate-800"
+            active-class="bg-blue-600/20 text-cyan-400 border border-cyan-500/30"
+          >
+            ✉️ Contacto & FAQ
           </RouterLink>
           
           <div class="pt-2 border-t border-slate-800/80">
             <RouterLink 
               @click="mobileMenuOpen = false"
               to="/panel-voluntarios" 
-              class="block px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-cyan-300 hover:bg-slate-800/60"
+              class="block px-4 py-2.5 rounded-xl text-xs font-semibold text-cyan-300 hover:bg-slate-800/60 border border-cyan-500/20"
               active-class="bg-cyan-500/10 text-cyan-300 border border-cyan-500/30"
             >
               ⚖️ Acceso Verificadores (Panel Interno)
@@ -190,37 +226,110 @@ const mobileMenuOpen = ref(false)
       </RouterView>
     </main>
 
-    <!-- Modern Minimalist Footer -->
-    <footer class="relative z-10 border-t border-slate-800/60 bg-slate-950/60 backdrop-blur-lg py-10 mt-16">
+    <!-- Rich Institutional Footer -->
+    <footer class="relative z-10 border-t border-slate-800/80 bg-slate-950/90 backdrop-blur-xl py-14 mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-cyan-500 flex items-center justify-center font-bold text-white text-xs">
-              SV
+          <!-- Col 1: Branding & Manifesto (2 cols) -->
+          <div class="lg:col-span-2 space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-400 p-[1.5px]">
+                <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-bold text-white text-xs">
+                  SV
+                </div>
+              </div>
+              <div>
+                <span class="font-extrabold text-base text-white tracking-tight">Portal Nacional</span>
+                <p class="text-xs text-slate-400">Contra las Fake News &bull; El Salvador</p>
+              </div>
             </div>
-            <div>
-              <p class="text-sm font-semibold text-slate-200">Portal Nacional contra las Fake News</p>
-              <p class="text-xs text-slate-500">Iniciativa ciudadana para la veracidad informativa y neutralidad periodística.</p>
+
+            <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+              Iniciativa cívica independiente de código abierto para la contrastación de medios, verificación trazable de hechos y alfabetización digital en El Salvador.
+            </p>
+
+            <div class="flex items-center gap-2 text-xs text-slate-500">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span>100% Cívico &bull; Sin Fines de Lucro &bull; Código Abierto</span>
             </div>
           </div>
 
-          <div class="flex items-center gap-6 text-xs text-slate-400">
-            <span class="flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-              Metodología Abierta
-            </span>
-            <span class="flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-              100% Anónimo
-            </span>
-            <span class="flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
-              El Salvador {{ new Date().getFullYear() }}
-            </span>
+          <!-- Col 2: Herramientas Cívicas -->
+          <div class="space-y-3">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300">Herramientas</h4>
+            <ul class="space-y-2 text-xs text-slate-400">
+              <li>
+                <RouterLink to="/" class="hover:text-cyan-300 transition-colors">Triangulador de Fuentes</RouterLink>
+              </li>
+              <li>
+                <RouterLink to="/alertas" class="hover:text-cyan-300 transition-colors">Alertas Ciudadanas</RouterLink>
+              </li>
+              <li>
+                <RouterLink to="/aprender" class="hover:text-cyan-300 transition-colors">Laboratorio Forense & Quiz</RouterLink>
+              </li>
+              <li>
+                <RouterLink to="/reportar" class="hover:text-cyan-300 transition-colors">Buzón de Reportes</RouterLink>
+              </li>
+              <li>
+                <RouterLink to="/panel-voluntarios" class="hover:text-cyan-300 transition-colors">Acceso Verificadores</RouterLink>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Institucional -->
+          <div class="space-y-3">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300">Iniciativa</h4>
+            <ul class="space-y-2 text-xs text-slate-400">
+              <li>
+                <RouterLink to="/acerca" class="hover:text-cyan-300 transition-colors">Acerca del Proyecto</RouterLink>
+              </li>
+              <li>
+                <RouterLink to="/servicios" class="hover:text-cyan-300 transition-colors">Servicios Cívicos</RouterLink>
+              </li>
+              <li>
+                <RouterLink to="/acerca" class="hover:text-cyan-300 transition-colors">Metodología Abierta IFCN</RouterLink>
+              </li>
+              <li>
+                <RouterLink to="/acerca" class="hover:text-cyan-300 transition-colors">Gobernanza Híbrida</RouterLink>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Contacto & Transparencia -->
+          <div class="space-y-3">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300">Transparencia</h4>
+            <ul class="space-y-2 text-xs text-slate-400">
+              <li>
+                <RouterLink to="/contacto" class="hover:text-cyan-300 transition-colors">Canales de Contacto</RouterLink>
+              </li>
+              <li>
+                <RouterLink to="/contacto" class="hover:text-cyan-300 transition-colors">Preguntas Frecuentes (FAQ)</RouterLink>
+              </li>
+              <li>
+                <RouterLink to="/contacto" class="hover:text-cyan-300 transition-colors">Postulación como Voluntario</RouterLink>
+              </li>
+              <li>
+                <span class="text-slate-500 font-mono">contacto@eticasv.org</span>
+              </li>
+            </ul>
           </div>
 
         </div>
+
+        <!-- Bottom bar -->
+        <div class="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+          <p>© {{ new Date().getFullYear() }} Portal Nacional contra las Fake News &bull; El Salvador.</p>
+          <div class="flex items-center gap-4">
+            <span>Privacidad Cero Huella</span>
+            <span>&bull;</span>
+            <span>Metodología Trazable</span>
+            <span>&bull;</span>
+            <span>San Salvador, SV</span>
+          </div>
+        </div>
+
       </div>
     </footer>
   </div>

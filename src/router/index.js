@@ -4,6 +4,9 @@ import Aprender from '../views/Aprender.vue'
 import Reportar from '../views/Reportar.vue'
 import AlertasView from '../views/AlertasView.vue'
 import VoluntariosView from '../views/VoluntariosView.vue'
+import AcercaView from '../views/AcercaView.vue'
+import ServiciosView from '../views/ServiciosView.vue'
+import ContactoView from '../views/ContactoView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +35,21 @@ const router = createRouter({
       path: '/panel-voluntarios',
       name: 'PanelVoluntarios',
       component: VoluntariosView
+    },
+    {
+      path: '/acerca',
+      name: 'Acerca',
+      component: AcercaView
+    },
+    {
+      path: '/servicios',
+      name: 'Servicios',
+      component: ServiciosView
+    },
+    {
+      path: '/contacto',
+      name: 'Contacto',
+      component: ContactoView
     }
   ]
 })
